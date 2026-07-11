@@ -2,7 +2,7 @@
 title: "Shanghai Marathon Plan 2026"
 layout: page-sidebar
 permalink: "/running.html"
-image: "/assets/images/beach01.jpg"
+image: "/assets/images/shanghai.jpg"
 comments: true
 ---
 **Race day → Sunday 6 December 2026 · 4 running days / week · 20-week build (+ prep week)**

@@ -215,7 +215,9 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .page-content blockquote { margin: 1.5rem 0; padding-left: 1.3rem; border-left: 3px solid var(--accent); color: var(--muted); font-style: italic; }
 .page-content pre { background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 1rem; overflow-x: auto; font-size: 0.9rem; }
 .page-content code { font-family: var(--mono); font-size: 0.85em; background: var(--code-bg); padding: 0.12em 0.4em; border-radius: 4px; }
-.page-hero { border-radius: 2px; margin-bottom: 1.75rem; }
+/* full-bleed banner: sits flush under the header, cropped to a short height */
+.page-hero-wrap { width: 100%; margin-top: -2.5rem; margin-bottom: 2.25rem; background: var(--line-2); }
+.page-hero { display: block; width: 100%; height: 200px; object-fit: cover; object-position: center 40%; margin: 0; border-radius: 0; }
 
 /* --- archive (search replacement) ---------------------------------------- */
 .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 2.5rem; }
@@ -271,6 +273,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   .feature h2 { font-size: 1.7rem; }
   .prevnext { flex-direction: column; }
   .prevnext a, .prevnext .nxt { max-width: 100%; text-align: left; margin-left: 0; }
+  .page-hero { height: 160px; }
 }
 
 /* --- rouge syntax (compact) ---------------------------------------------- */
