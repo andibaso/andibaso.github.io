@@ -1,11 +1,4 @@
-<!--  Replace menu links here -->
-
-<li class="nav-item">
-<a class="nav-link" href="{{site.baseurl}}/index.html">Home</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{site.baseurl}}/shangma.html">Running</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="{{site.baseurl}}/about.html">About</a>
-</li>
+<a class="nav-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+<a class="nav-link{% if page.url contains 'archive' %} active{% endif %}" href="{{ '/archive.html' | relative_url }}">Archive</a>
+<a class="nav-link{% if page.url contains 'shangma' %} active{% endif %}" href="{{ '/shangma.html' | relative_url }}">Running</a>
+<a class="nav-link{% if page.url contains 'about' %} active{% endif %}" href="{{ '/about.html' | relative_url }}">About</a>

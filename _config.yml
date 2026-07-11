@@ -6,6 +6,7 @@ favicon: 'assets/images/favicon.ico'
 baseurl: ''
 disqus: 'andi-sg'
 email: 'ab.annas@gmail.com'
+author: 'Andi'
 mailchimp-list: ''
 include: ["_pages"]
 permalink: /:title/

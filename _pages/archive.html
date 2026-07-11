@@ -1,0 +1,71 @@
+---
+title: "Archive"
+layout: default
+permalink: "/archive.html"
+description: "Every post, by year. Filter by topic."
+---
+<div class="wrap">
+    <div class="page">
+        <h1 class="page-title">Archive</h1>
+        <p class="intro" style="margin-bottom:1.75rem;"><span>{{ site.posts | size }} posts. Filter by topic, or use your browser's find (⌘/Ctrl-F) for anything else.</span></p>
+
+        <div class="filters" role="group" aria-label="Filter posts by category">
+            <button class="filter-btn" data-cat="all" aria-pressed="true">All</button>
+            {% assign cats = "" | split: "" %}
+            {% for category in site.categories %}{% assign cats = cats | push: category[0] %}{% endfor %}
+            {% assign cats = cats | sort_natural %}
+            {% for cat in cats %}
+            <button class="filter-btn" data-cat="{{ cat | downcase }}" aria-pressed="false">{{ cat }}</button>
+            {% endfor %}
+        </div>
+
+        {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+        <div id="archive">
+        {% for year in postsByYear %}
+            <h2 class="archive-year" data-year="{{ year.name }}">{{ year.name }}</h2>
+            <ul class="archive-list">
+                {% for post in year.items %}
+                <li class="archive-item" data-cats="{% for c in post.categories %}{{ c | downcase }} {% endfor %}">
+                    <span class="date">{{ post.date | date: "%b %-d" }}</span>
+                    <span class="title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        </div>
+        <p class="archive-empty">No posts in that topic yet.</p>
+    </div>
+</div>
+
+<script>
+(function () {
+    var buttons = document.querySelectorAll('.filter-btn');
+    var items = document.querySelectorAll('.archive-item');
+    var years = document.querySelectorAll('.archive-year');
+    var empty = document.querySelector('.archive-empty');
+
+    function apply(cat) {
+        var shown = 0;
+        items.forEach(function (li) {
+            var match = cat === 'all' || (' ' + li.dataset.cats + ' ').indexOf(' ' + cat + ' ') !== -1;
+            li.classList.toggle('hidden', !match);
+            if (match) shown++;
+        });
+        // hide year headings with no visible posts
+        years.forEach(function (h) {
+            var list = h.nextElementSibling;
+            var any = list && list.querySelector('.archive-item:not(.hidden)');
+            h.style.display = any ? '' : 'none';
+        });
+        empty.style.display = shown ? 'none' : 'block';
+    }
+
+    buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+            btn.setAttribute('aria-pressed', 'true');
+            apply(btn.dataset.cat);
+        });
+    });
+})();
+</script>

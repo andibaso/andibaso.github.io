@@ -11,7 +11,7 @@ comments: true
 |---|---|---|---|---|
 | 4:00:00 | 3:45:00 | 5:20 /km | 13 Jul – 6 Dec | 32 km |
 
-> Improvement note: this is a 15-minute PB improvement — realistic, but the paces are genuinely faster. The tempo and interval work is what earns the 3:45. If 5:20 feels unsustainable in the peak long runs (Weeks 16–17), settle race target near 5:30 (~3:52) rather than blow up at 32 km.
+> Improvement note: this is a 15-minute PB improvement. Realistic, but the paces are genuinely faster. The tempo and interval work is what earns the 3:45. If 5:20 feels unsustainable in the peak long runs (Weeks 16–17), settle race target near 5:30 (~3:52) rather than blow up at 32 km.
 
 ---
 
@@ -33,29 +33,29 @@ comments: true
 ### Warm-up
 
 **Easy days (Thu / Sat)**
-- The first kilometre *is* the warm-up — start slow and let pace drift up. No drills needed.
+- The first kilometre *is* the warm-up: start slow and let pace drift up. No drills needed.
 
 **Quality days & race (~15 min)**
 - **Easy jog 10–15 min** (the 2 km WU in the plan).
 - **Dynamic drills ~5 min:** leg swings (front-back & side-side), walking lunges, high knees, butt kicks, A-skips, hip circles.
-- **4–6 strides** building to target pace, full recovery between — primes legs so you hit pace from rep one.
+- **4–6 strides** building to target pace, full recovery between, priming legs so you hit pace from rep one.
 
-*No static stretching before you run — it can dull power on cold muscles.*
+*No static stretching before you run; it can dull power on cold muscles.*
 
 ### Cool-down
 
 **After quality & long runs**
 - **Easy jog 5–10 min** (the 2 km CD), then walk a few minutes to settle heart rate.
-- **Static stretch while warm:** calves, quads, hamstrings, hip flexors, glutes — hold ~20–30 sec each. Foam roll if you have one.
+- **Static stretch while warm:** calves, quads, hamstrings, hip flexors, glutes; hold ~20–30 sec each. Foam roll if you have one.
 - **Refuel within 30–60 min:** carbs + protein, plus fluids and electrolytes.
 
-*Heat & humidity: you warm up faster, so trim the jog slightly — and never skip the cool-down walk and refuel after the 32 km run.*
+*Heat & humidity: you warm up faster, so trim the jog slightly, and never skip the cool-down walk and refuel after the 32 km run.*
 
 ---
 
 ## 03 · Week-by-week schedule
 
-| Wk | Dates | Phase | Tue — quality | Thu | Sat | Sun — long run | km |
+| Wk | Dates | Phase | Tue (quality) | Thu | Sat | Sun (long run) | km |
 |----|-------|-------|---------------|-----|-----|----------------|----|
 | Prep | 13–19 Jul | ease-in | Easy 5 km | Easy 5 km | Easy 4 km | 8 km easy | ~22 |
 | 1 | 20–26 Jul | Base | Easy 6 km | Easy 6 km | Easy 5 km | 10 km easy | ~27 |
@@ -77,7 +77,7 @@ comments: true
 | 17 | 9–15 Nov | Peak · key | Tempo 6 km @ thresh | Easy 8 km | Easy 8 km | **32 km · last 10 @ GMP** | ~58 |
 | 18 | 16–22 Nov | Taper | Tempo 4 km @ thresh | Easy 7 km | Easy 6 km + strides | 24 km easy | ~45 |
 | 19 | 23–29 Nov | Taper | 4×1 km @ GMP–thresh | Easy 6 km | Easy 5 km + strides | 16 km · last 4 @ GMP | ~35 |
-| 20 | 30 Nov–6 Dec | Race wk | Easy 6 km + strides | Easy 5 km + pickups | Shakeout 4 km / rest | **MARATHON 42.2 km @ 5:20** | — |
+| 20 | 30 Nov–6 Dec | Race wk | Easy 6 km + strides | Easy 5 km + pickups | Shakeout 4 km / rest | **MARATHON 42.2 km @ 5:20** | n/a |
 
 *All quality sessions add a 2 km easy warm-up & cool-down. "thresh" = threshold 4:55–5:05/km. "cut" = cutback week. Tue is the one hard day; Thu & Sat stay easy.*
 
@@ -95,10 +95,10 @@ comments: true
 ## 05 · Notes that make it stick
 
 - **Rest is training.** The 3 non-run days are for recovery. Optional 1–2 strength sessions (legs, core, glutes) + easy cross-training (bike/swim) on those days.
-- **Fuel the long ones.** On runs of 90+ min take carbs every 40–45 min; aim ~50–70 g carbs/hour on race day. Practise it — nothing new on race day.
+- **Fuel the long ones.** On runs of 90+ min take carbs every 40–45 min; aim ~50–70 g carbs/hour on race day. Practise it; nothing new on race day.
 - **Heat & humidity.** Slow easy paces 10–20 sec/km, use electrolytes, run long sessions early morning.
 - **Listen to your body.** Niggles → swap a quality day for easy or rest. One missed session won't derail you; running injured will. Never stack two hard days.
-- **Reality check.** Use the Week 17 32 km run (last 10 km at 5:20) to confirm 3:45 — if it's a grind, race nearer 5:30 (~3:52) rather than blow up at 32 km.
+- **Reality check.** Use the Week 17 32 km run (last 10 km at 5:20) to confirm 3:45; if it's a grind, race nearer 5:30 (~3:52) rather than blow up at 32 km.
 
 ---
 
