@@ -1,7 +1,7 @@
 ---
 title: "Shanghai Marathon Plan 2026"
 layout: page-sidebar
-permalink: "/shangma.html"
+permalink: "/running.html"
 image: "/assets/images/beach01.jpg"
 comments: true
 ---
