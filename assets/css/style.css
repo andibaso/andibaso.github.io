@@ -16,6 +16,7 @@
   --header-bg:    #f1ede7;
   --header-brand: #4a3b30;
   --header-line:  #e3ddd2;
+  --logo-dot:     #e24a33;
 
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Charter", "Georgia", "Times New Roman", serif;
   --sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -39,17 +40,18 @@
     --header-bg:    #1c1813;
     --header-brand: #cbb9a6;
     --header-line:  #2c261f;
+    --logo-dot:     #ff6b4a;
   }
 }
 :root[data-theme="dark"] {
   --paper:#17150f; --ink:#ece7db; --muted:#a29b8a; --faint:#837c6d;
   --line:#2b2820; --line-2:#242118; --accent:#d8c4ad; --accent-soft:#c9b199; --code-bg:#201d16;
-  --header-bg:#1c1813; --header-brand:#cbb9a6; --header-line:#2c261f;
+  --header-bg:#1c1813; --header-brand:#cbb9a6; --header-line:#2c261f; --logo-dot:#ff6b4a;
 }
 :root[data-theme="light"] {
   --paper:#f5f4f0; --ink:#1f1d1a; --muted:#6b6459; --faint:#8f887c;
   --line:#e6e0d4; --line-2:#efe9de; --accent:#4a3b30; --accent-soft:#6a5445; --code-bg:#f3efe6;
-  --header-bg:#f1ede7; --header-brand:#4a3b30; --header-line:#e3ddd2;
+  --header-bg:#f1ede7; --header-brand:#4a3b30; --header-line:#e3ddd2; --logo-dot:#e24a33;
 }
 
 /* --- reset ---------------------------------------------------------------- */
@@ -79,11 +81,14 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 /* --- header / nav --------------------------------------------------------- */
 .site-header { background: var(--header-bg); border-bottom: 1px solid var(--header-line); }
 .nav {
-  display: flex; align-items: baseline; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between;
   gap: 1rem; padding: 1.15rem 0; flex-wrap: wrap;
 }
-.brand { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; color: var(--header-brand); }
+.brand { display: inline-flex; align-items: center; color: var(--header-brand); }
 .brand:hover { text-decoration: none; opacity: 0.72; }
+.logo { height: 1.9rem; width: auto; display: block; }
+.footer-brand { display: inline-flex; align-items: center; color: var(--muted); }
+.footer-brand .logo { height: 1.3rem; }
 .nav-links { display: flex; gap: 1.4rem; align-items: baseline; }
 .nav-links a {
   font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.08em;

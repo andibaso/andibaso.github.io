@@ -7,7 +7,9 @@
 
     {% seo %}
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ '/' | append: site.favicon | relative_url }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="{{ '/' | append: site.favicon | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="{{ '/feed.xml' | relative_url }}">
 
@@ -17,7 +19,7 @@
     <header class="site-header">
         <div class="wrap">
             <nav class="nav">
-                <a class="brand" href="{{ relative_url }}"> &i </a>
+                <a class="brand" href="{{ '/' | relative_url }}" aria-label="andi.sg home">{% include logo.html %}</a>
                 <div class="nav-links">
                     {% include menu-header.html %}
                 </div>
@@ -31,6 +33,7 @@
 
     <footer class="site-footer">
         <div class="wrap">
+            <span class="footer-brand">{% include logo.html %}</span>
             <span>© <script>document.write(new Date().getFullYear())</script> /andi · {{ site.description }}</span>
             <span>
                 <a href="{{ '/feed.xml' | relative_url }}">RSS</a> ·

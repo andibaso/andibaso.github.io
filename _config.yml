@@ -1,7 +1,7 @@
 # Site
 name: 'andi.sg'
 description: 'Living live and make it better'
-logo: 'assets/images/logo.png'
+logo: 'assets/images/logo.svg'
 favicon: 'assets/images/favicon.ico'
 baseurl: ''
 disqus: 'andi-sg'
