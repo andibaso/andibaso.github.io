@@ -34,8 +34,6 @@ One New Relic sink per project. If you need the same metrics in a second backend
 
 In New Relic, open the account dropdown (bottom left), then **API keys**. Create a key of type **Ingest - License**, or copy an existing one. It starts with a short prefix and ends in `NRAL`.
 
-If your account is in the EU data centre, note it now. The US OTLP endpoint is `https://otlp.nr-data.net` and the EU one is `https://otlp.eu01.nr-data.net`. The New Relic option in Atlas picks the endpoint for you based on the region you select, so you only need to know which one you are on.
-
 That's the only key you need.
 
 ## Step 2: add the OpenTelemetry integration in Atlas
@@ -176,7 +174,7 @@ If you build your own:
 {% raw %}- **Variables with `excluded: true`** start switched off, so the dashboard shows every cluster until you turn the filter on. Use `IN ({{cluster}})` rather than `=` so multi-select works.{% endraw %}
 - **Facet by host.** `derivative()` is worked out per series, so mixing hosts in one series gives wrong numbers. Add `FACET mongodb.process.host` to anything that uses it.
 
-The full JSON comes from a short Python script, so the account ID and attribute names are set once instead of edited in 70 places. Download both here: [gen_dashboard.py]({{ site.baseurl }}/assets/files/gen_dashboard.py) and [mongodb-atlas-otel-dashboard.json]({{ site.baseurl }}/assets/files/mongodb-atlas-otel-dashboard.json)
+You can download the full JSON here:  [mongodb-atlas-otel-dashboard.json]({{ site.baseurl }}/assets/files/mongodb-atlas-otel-dashboard.json)
 
 ![New Relic dashboard, Overview page]({{ site.baseurl }}/assets/images/atlas-otel-dashboard.png)
 <!-- TODO: screenshot of the imported dashboard, Overview page -->
