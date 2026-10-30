@@ -22,7 +22,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT uniqueCount(`mongodb.cluster.name`) AS 'Clusters' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) AND metricName LIKE 'mongodb.%'"
               }
             ],
@@ -49,7 +49,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT uniqueCount(`mongodb.process.host`) AS 'Hosts' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) AND metricName LIKE 'mongodb.%'"
               }
             ],
@@ -76,7 +76,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.repl_status.my_state`) AS 'my_state' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host`, `mongodb.replica_set.name`, `mongodb.replica_set.state`, `mongodb.node.type`"
               }
             ],
@@ -100,7 +100,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.connections.current`) AS 'Connections' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host`"
               }
             ],
@@ -124,7 +124,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.opcounters.query`, 1 second) AS 'query', derivative(`mongodb.server_status.opcounters.getmore`, 1 second) AS 'getmore', derivative(`mongodb.server_status.opcounters.insert`, 1 second) AS 'insert', derivative(`mongodb.server_status.opcounters.update`, 1 second) AS 'update', derivative(`mongodb.server_status.opcounters.delete`, 1 second) AS 'delete', derivative(`mongodb.server_status.opcounters.command`, 1 second) AS 'command' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) TIMESERIES AUTO"
               }
             ],
@@ -160,7 +160,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT average(`mongodb.hardware.process.cpu.normalized_user_percent`) + average(`mongodb.hardware.process.cpu.normalized_kernel_percent`) AS 'CPU %' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -196,7 +196,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.hardware.process.memory.vm_rss_bytes`) AS 'RSS' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -232,7 +232,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.hardware.disk.space_used_percentage`) AS 'Used %' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -268,7 +268,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.queues.execution.read.available`) AS 'read', latest(`mongodb.server_status.queues.execution.write.available`) AS 'write' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -304,7 +304,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.derived.replstatus.lag_milliseconds`) AS 'lag', latest(`mongodb.derived.replstatus.majority_commit_lag_milliseconds`) AS 'majority commit lag' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -340,7 +340,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.metrics.query_executor.scanned_objects`, 1 second) AS 'scanned objects', derivative(`mongodb.server_status.metrics.document.returned`, 1 second) AS 'returned' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -376,7 +376,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.derived.server_status.op_latencies.reads.micros.p50`) AS 'p50', latest(`mongodb.derived.server_status.op_latencies.reads.micros.p95`) AS 'p95' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -412,7 +412,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.derived.server_status.op_latencies.writes.micros.p50`) AS 'p50', latest(`mongodb.derived.server_status.op_latencies.writes.micros.p95`) AS 'p95' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -448,7 +448,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.global_lock.current_queue.readers`) AS 'readers', latest(`mongodb.server_status.global_lock.current_queue.writers`) AS 'writers' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -484,7 +484,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT rate(sum(`mongodb.derived.commands.failed`), 1 second) AS 'failed', rate(sum(`mongodb.derived.commands.total`), 1 second) AS 'total' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -520,7 +520,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.extra_info.page_faults`, 1 second) AS 'faults/s' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -562,7 +562,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.opcounters.query`, 1 second) AS 'query', derivative(`mongodb.server_status.opcounters.getmore`, 1 second) AS 'getmore' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -598,7 +598,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.opcounters.insert`, 1 second) AS 'insert', derivative(`mongodb.server_status.opcounters.update`, 1 second) AS 'update', derivative(`mongodb.server_status.opcounters.delete`, 1 second) AS 'delete' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -634,7 +634,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.opcounters.command`, 1 second) AS 'command', derivative(`mongodb.server_status.opcounters.aggregate`, 1 second) AS 'aggregate' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -670,7 +670,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.metrics.document.returned`, 1 second) AS 'returned', derivative(`mongodb.server_status.metrics.document.inserted`, 1 second) AS 'inserted', derivative(`mongodb.server_status.metrics.document.updated`, 1 second) AS 'updated', derivative(`mongodb.server_status.metrics.document.deleted`, 1 second) AS 'deleted' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -706,7 +706,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.metrics.query_executor.scanned`, 1 second) AS 'index keys', derivative(`mongodb.server_status.metrics.query_executor.scanned_objects`, 1 second) AS 'objects' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -742,7 +742,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.metrics.operation.scan_and_order`, 1 second) AS 'scan and order', derivative(`mongodb.server_status.metrics.operation.write_conflicts`, 1 second) AS 'write conflicts' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -778,7 +778,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.derived.server_status.op_latencies.commands.micros.p50`) AS 'p50', latest(`mongodb.derived.server_status.op_latencies.commands.micros.p95`) AS 'p95' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -814,7 +814,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.derived.server_status.op_working_time.reads.micros.p95`) AS 'reads', latest(`mongodb.derived.server_status.op_working_time.writes.micros.p95`) AS 'writes', latest(`mongodb.derived.server_status.op_working_time.commands.micros.p95`) AS 'commands' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -850,7 +850,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.metrics.cursor.open`) AS 'open', derivative(`mongodb.server_status.metrics.cursor.timed_out`, 1 second) AS 'timed out /s' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -886,7 +886,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.asserts.regular`, 1 second) AS 'regular', derivative(`mongodb.server_status.asserts.warning`, 1 second) AS 'warning', derivative(`mongodb.server_status.asserts.msg`, 1 second) AS 'msg', derivative(`mongodb.server_status.asserts.user`, 1 second) AS 'user' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -922,7 +922,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.network.bytes_in`, 1 second) AS 'in', derivative(`mongodb.server_status.network.bytes_out`, 1 second) AS 'out' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -958,7 +958,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.network.num_requests`, 1 second) AS 'req/s' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -994,7 +994,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.connections.current`) AS 'current', latest(`mongodb.server_status.connections.active`) AS 'active' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1030,7 +1030,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.connections.total_created`, 1 second) AS 'created/s' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1066,7 +1066,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.transactions.current_open`) AS 'open', latest(`mongodb.server_status.transactions.current_prepared`) AS 'prepared' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1102,7 +1102,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.metrics.ttl.deleted_documents`, 1 second) AS 'deleted/s' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1138,7 +1138,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.metrics.query.sort.spill_to_disk`, 1 second) AS 'spills/s' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1174,7 +1174,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.metrics.query.plan_cache.classic.misses`, 1 second) AS 'classic', derivative(`mongodb.server_status.metrics.query.plan_cache.sbe.misses`, 1 second) AS 'sbe' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1216,7 +1216,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT average(`mongodb.hardware.process.cpu.normalized_user_percent`) AS 'user', average(`mongodb.hardware.process.cpu.normalized_kernel_percent`) AS 'kernel' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1252,7 +1252,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT average(`mongodb.hardware.system.cpu.normalized_user_percent`) AS 'user', average(`mongodb.hardware.system.cpu.normalized_kernel_percent`) AS 'kernel', average(`mongodb.hardware.system.cpu.normalized_io_wait_percent`) AS 'iowait', average(`mongodb.hardware.system.cpu.normalized_steal_percent`) AS 'steal' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1288,7 +1288,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.hardware.system.memory.percent_used`) AS 'Used %' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1324,7 +1324,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.hardware.system.memory.used_kilobytes`) AS 'used', latest(`mongodb.hardware.system.memory.available_kilobytes`) AS 'available', latest(`mongodb.hardware.system.memory.cached_kilobytes`) AS 'cached' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1360,7 +1360,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.hardware.process.memory.vm_rss_bytes`) AS 'rss', latest(`mongodb.hardware.process.memory.vm_size_bytes`) AS 'virtual' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1396,7 +1396,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.tcmalloc.generic.heap_size`) AS 'heap', latest(`mongodb.server_status.tcmalloc.generic.current_allocated_bytes`) AS 'allocated' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1432,7 +1432,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.wired_tiger.cache.bytes_currently_in_the_cache`) AS 'in cache', latest(`mongodb.server_status.wired_tiger.cache.tracked_dirty_bytes_in_the_cache`) AS 'dirty', latest(`mongodb.server_status.wired_tiger.cache.maximum_bytes_configured`) AS 'max' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1468,7 +1468,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.wired_tiger.cache.bytes_read_into_cache`, 1 second) AS 'read into', derivative(`mongodb.server_status.wired_tiger.cache.bytes_written_from_cache`, 1 second) AS 'written from' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1504,7 +1504,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.wired_tiger.cache.bytes_currently_in_the_cache`) / latest(`mongodb.server_status.wired_tiger.cache.maximum_bytes_configured`) * 100 AS 'Fill %' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1540,7 +1540,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT rate(sum(`mongodb.hardware.disk.read_count`), 1 second) AS 'read', rate(sum(`mongodb.hardware.disk.write_count`), 1 second) AS 'write' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1576,7 +1576,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT average(`mongodb.hardware.disk.read_latency_milliseconds`) AS 'read', average(`mongodb.hardware.disk.write_latency_milliseconds`) AS 'write' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1612,7 +1612,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT average(`mongodb.hardware.disk.read_throughput_bytes_per_second`) AS 'read', average(`mongodb.hardware.disk.write_throughput_bytes_per_second`) AS 'write' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1648,7 +1648,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.hardware.disk.space_used_bytes`) AS 'used', latest(`mongodb.hardware.disk.space_free_bytes`) AS 'free' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1684,7 +1684,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT average(`mongodb.hardware.disk.queue_depth`) AS 'depth' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1720,7 +1720,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.hardware.root_disk.space_used_percentage`) AS 'Used %' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1756,7 +1756,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT average(`mongodb.hardware.system.pressure.cpu_some_avg10`) AS 'cpu some', average(`mongodb.hardware.system.pressure.io_some_avg10`) AS 'io some', average(`mongodb.hardware.system.pressure.memory_some_avg10`) AS 'memory some' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1792,7 +1792,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.hardware.system.memory.swap_used_kilobytes`) AS 'used', latest(`mongodb.hardware.system.memory.swap_free_kilobytes`) AS 'free' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1828,7 +1828,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT rate(sum(`mongodb.hardware.system.vm.page_swap_in`), 1 second) AS 'swap in /s', rate(sum(`mongodb.hardware.system.vm.page_swap_out`), 1 second) AS 'swap out /s', rate(sum(`mongodb.hardware.system.vm.oom_kill`), 1 second) AS 'oom kill /s' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1864,7 +1864,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT rate(sum(`mongodb.hardware.system.network.bytes_in_bytes`), 1 second) AS 'in', rate(sum(`mongodb.hardware.system.network.bytes_out_bytes`), 1 second) AS 'out' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1900,7 +1900,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.uptime_millis`) / 3600000 AS 'Hours' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -1936,7 +1936,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.hardware.platform.num_logical_cpus`) AS 'CPUs' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host`"
               }
             ],
@@ -1966,7 +1966,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.derived.replstatus.lag_milliseconds`) AS 'lag', latest(`mongodb.derived.replstatus.majority_commit_lag_milliseconds`) AS 'majority commit lag' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2002,7 +2002,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.derived.oplog.master_time_seconds`) AS 'window' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2038,7 +2038,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT average(`mongodb.derived.oplog.bytes_per_second`) AS 'rate', latest(`mongodb.oplog.rs_stats.size`) AS 'size' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2074,7 +2074,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.metrics.repl.apply.batches.total_millis`, 1 second) AS 'apply', derivative(`mongodb.server_status.metrics.repl.write.batches.total_millis`, 1 second) AS 'write' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2110,7 +2110,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.metrics.repl.network.getmores.num`, 1 second) AS 'getmores', derivative(`mongodb.server_status.metrics.repl.network.getmores.num_empty_batches`, 1 second) AS 'empty batches' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2146,7 +2146,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.flow_control.is_lagged`) AS 'lagged', latest(`mongodb.server_status.flow_control.target_rate_limit`) AS 'target rate limit' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2182,7 +2182,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.catalog_stats.collections`) AS 'collections', latest(`mongodb.server_status.catalog_stats.views`) AS 'views', latest(`mongodb.server_status.catalog_stats.timeseries`) AS 'timeseries', latest(`mongodb.server_status.index_stats.count`) AS 'indexes' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host`"
               }
             ],
@@ -2206,7 +2206,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.server_status.index_builds.total`) AS 'total', latest(`mongodb.server_status.index_bulk_builder.mem_usage`) AS 'bulk builder mem' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2242,7 +2242,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT derivative(`mongodb.server_status.oplog_truncation.truncate_count`, 1 second) AS 'truncates/s', derivative(`mongodb.server_status.oplog_truncation.total_time_truncating_micros`, 1 second) AS 'micros/s' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2278,7 +2278,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT rate(sum(`mongodb.search.index_stats_query_total_queries`), 1 second) AS 'total', rate(sum(`mongodb.search.index_stats_query_failed_queries`), 1 second) AS 'failed' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2314,7 +2314,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT rate(sum(`mongodb.search.index_stats_indexing_insert`), 1 second) AS 'insert', rate(sum(`mongodb.search.index_stats_indexing_update`), 1 second) AS 'update', rate(sum(`mongodb.search.index_stats_indexing_delete`), 1 second) AS 'delete' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2350,7 +2350,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.search.index_stats_indexing_replication_lag_ms`) AS 'lag' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2386,7 +2386,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.search.jvm_memory_used_bytes`) AS 'used', latest(`mongodb.search.jvm_memory_max_bytes`) AS 'max' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2422,7 +2422,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.search.index_stats_index_size_bytes`) AS 'size' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2458,7 +2458,7 @@
           "rawConfiguration": {
             "nrqlQueries": [
               {
-                "accountId": 0,
+                "accountId": [<YOUR_ACCOUNT_ID>],
                 "query": "FROM Metric SELECT latest(`mongodb.search.index_stats_num_lucene_max_docs`) AS 'docs' WHERE `mongodb.project.name` IN ({{project}}) AND `mongodb.cluster.name` IN ({{cluster}}) FACET `mongodb.process.host` TIMESERIES AUTO"
               }
             ],
@@ -2493,9 +2493,9 @@
       "items": null,
       "nrqlQuery": {
         "accountIds": [
-          0
+          [<YOUR_ACCOUNT_ID>]
         ],
-        "query": "FROM Metric SELECT uniques(`mongodb.project.name`, 1000) SINCE 1 day ago"
+        "query": "FROM Metric SELECT uniques(`mongodb.project.name`) WHERE metricName LIKE 'mongodb.%' SINCE 1 day ago"
       },
       "options": {
         "ignoreTimeRange": true,
@@ -2512,9 +2512,9 @@
       "items": null,
       "nrqlQuery": {
         "accountIds": [
-          0
+          [<YOUR_ACCOUNT_ID>]
         ],
-        "query": "FROM Metric SELECT uniques(`mongodb.cluster.name`, 1000) SINCE 1 day ago"
+        "query": "FROM Metric SELECT uniques(`mongodb.cluster.name`) WHERE metricName LIKE 'mongodb.%' SINCE 1 day ago"
       },
       "options": {
         "ignoreTimeRange": true,
